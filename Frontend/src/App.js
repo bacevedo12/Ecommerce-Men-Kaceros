@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import Inicio from './components/Inicio/Inicio';
 import Menu from './components/Menu/Menu';
 import Iniciarsesion from './components/Iniciarsesion/Iniciarsesion';
@@ -7,7 +7,7 @@ import Miperfil from './components/Miperfil/Miperfil';
 import Registro from './components/Registro/Registro';
 import NavBarComercio from './layouts/Navbar';
 
-import ShoppingCard from './components/ShoppingCard/ShoppingCard';
+import ShoppingCard from './components/ShoppingCard/ShoppingCart';
 // import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 
 
@@ -16,7 +16,7 @@ function App() {
     <div className="App">
       
     {/* <PayPalScriptProvider opcion= {{"client-id":"AVx3UcHnRMBHQ_L3rZjZE0cI6wFvn1HcifiBzJGYPT7xyV4ntCWgdFpuk4fAVCOtV6CN5Sae-wsrNQ4X"}}> */}
-        <BrowserRouter>
+
       <Routes>
         <Route path='/' element={ <NavBarComercio /> }>
           <Route index element= { <Inicio /> }/>
@@ -30,7 +30,6 @@ function App() {
         </Route>
       </Routes>
       
-      </BrowserRouter>
     {/* </PayPalScriptProvider> */}
       
 
@@ -42,3 +41,4 @@ function App() {
 }
 
 export default App;
+

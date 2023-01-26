@@ -1,5 +1,5 @@
 import "./shoppingcard.css"
-import ShoppingCard from "./ShoppingCard.js"
+import ShoppingCard from "./ShoppingCart.js"
 
 export const ProductItem = ({data, addToCart}) => {
     let{id,name,price} = data;
