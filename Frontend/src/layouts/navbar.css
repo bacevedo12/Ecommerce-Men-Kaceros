@@ -1,0 +1,13 @@
+.navBar {
+    background-color:darkgray;
+    
+}
+
+.itemNav{
+    justify-content: end;
+}
+
+.imagenLogo {
+    max-height: 80px;
+    
+}

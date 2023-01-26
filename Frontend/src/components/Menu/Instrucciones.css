@@ -1,0 +1,8 @@
+.colorAcordeon {
+    background-color: rgb(241 66 89);
+    font-family: 'Montserrat,sans-serif';
+    
+}
+.Accordion-Item .Accordion.Body{
+    padding-top: 1.5em !important;
+}
