@@ -39,7 +39,7 @@ const Registro = () => {
                 body:JSON.stringify(usuario)
             }
 
-            let res = await fetch (`${url_api}/usuarios`, config)
+            let res = await fetch (`${url_api}/auth/signup`, config)
             let json = await res.json()
 
             console.log(json)
