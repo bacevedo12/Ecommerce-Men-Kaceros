@@ -6,6 +6,7 @@ import Iniciarsesion from './components/Iniciarsesion/Iniciarsesion';
 import Miperfil from './components/Miperfil/Miperfil';
 import Registro from './components/Registro/Registro';
 import NavBarComercio from './layouts/Navbar';
+import Visualizar from './components/Menu/Visualizar';
 
 import ShoppingCard from './components/ShoppingCard/ShoppingCart';
 // import { PayPalScriptProvider } from '@paypal/react-paypal-js';
@@ -25,6 +26,7 @@ function App() {
           <Route path='Registro' element= { <Registro /> }/>
           <Route path='Miperfil' element= { <Miperfil /> }/>
           <Route path='ShoppingCard' element= { <ShoppingCard /> }/>
+          <Route path='/platos/:id' element= { <Visualizar /> }/>
           <Route path='*' element= { <Navigate replace to="/" /> }/>
 
         </Route>

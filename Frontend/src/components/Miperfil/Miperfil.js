@@ -3,8 +3,8 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import { getUsers } from '../api/Api';
 import "./Miperfil.css"
-import { Usuario } from './usuario';
-import { UsuarioItem } from './usuarioItems';
+// import { Usuario } from './usuario';
+// import { UsuarioItem } from './usuarioItems';
 
 
 const Miperfil = () => {
@@ -25,18 +25,18 @@ const Miperfil = () => {
   // }, []);
 
 
-        const [usuario, setUsuario] = useState([]);
+        // const [usuario, setUsuario] = useState([]);
       
-        useEffect(() => {
-          getUsers()
-            .then((data) => {
-              setUsuario(data);
-            })
-            .catch((err) => {
-              console.log(err);
-            });
-        getUsers()
-        });
+        // useEffect(() => {
+        //   getUsers()
+        //     .then((data) => {
+        //       setUsuario(data);
+        //     })
+        //     .catch((err) => {
+        //       console.log(err);
+        //     });
+        // getUsers()
+        // });
       
       
          
@@ -74,7 +74,7 @@ const Miperfil = () => {
     <div>
         <h3 className="mt-5 mb-4 fs-2 fw-bolder misDatos text-light">Mis Datos</h3>
     </div>
-    <Usuario>
+    {/* <Usuario>
         {
           usuario.map((usuario) => (
             <UsuarioItem
@@ -88,7 +88,7 @@ const Miperfil = () => {
 
           ))
         }
-      </Usuario>
+      </Usuario> */}
     <div>
         <label className="me-3 mt-3 mb-3">Nombre(s)</label>
         <input></input>

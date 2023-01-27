@@ -1,6 +1,6 @@
 import { createContext } from 'react'
 
-const ShoppingCartContext = createContext()
+const ShoppingCartContext = createContext(null)
 
 
 

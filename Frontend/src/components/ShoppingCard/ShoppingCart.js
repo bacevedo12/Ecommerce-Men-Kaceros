@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react'
 import { Button, Modal, Table } from 'react-bootstrap'
 import ShoppingCartContext from '../../context/shopping-cart/ShoppingCartContext.js'
-
+import PayPal from "../PayPal/PayPal.js";
 
 const ShoppingCart = ( props ) => {
   const shoppingCartCtx = useContext( ShoppingCartContext )
@@ -49,7 +49,7 @@ const ShoppingCart = ( props ) => {
                       return (
                         <tr key={ index }>
                           <td>{ index + 1 }</td>
-                          <td>{ product.name }</td>
+                          <td>{ product.title }</td>
                           <td>{ product.price }</td>
                           <td>{ product.quantity }</td>
 
@@ -78,7 +78,11 @@ const ShoppingCart = ( props ) => {
         <Button variant="primary" onClick={ handleCloseShoppingCart }>
           Pagar
         </Button>
+       
       </Modal.Footer>
+      <div>
+          <PayPal/>
+       </div>
     </Modal>
   )
 }

@@ -1,41 +1,23 @@
-import Card from 'react-bootstrap/Card';
+import { Button, Card, Nav } from 'react-bootstrap';
+import { useContext } from 'react'
 import React  from "react";
+import { Link } from 'react-router-dom';
 import './Platos.css';
-//import { Cartcontext } from './Context/CartContext';
-
-//import { useState, useEffect } from 'react';
+import ShoppingCartContext from '../../context/shopping-cart/ShoppingCartContext';
 
 
-import { Navigate, useNavigate } from 'react-router-dom';
 
 
-const Platos = ({items, addToCart}) =>{
+// const Product = ( props ) => {
+//   const { product } = props
+//   const shoppingCartCtx = useContext( ShoppingCartContext )
+//   const { addProduct } = shoppingCartCtx
 
-    
-//    const [cart, setCart]= useContext(Cartcontext);
+const Platos = ({items}) =>{
+  // const navigate = useNavigate();
 
-//     const addToCart = () => {
-//       setCart((currItems) => {
-//         const isItemsFound = currItems.find((item) => item.id === id);
-//         if (isItemsFound) {
-//           return currItems.map((item) => {
-//             if (item.id === id) {
-//               return { ...item, quantity: item.quantity + 1 };
-//             } else {
-//               return item;
-//             }
-//           });
-//         } else {
-//           return [...currItems, { id, quantity: 1, price }];
-//         }
-//       });
-//     };
-
-//    const getQuantityById = (id) => {
-//       return cart.find((item) => item.id === id)?.quantity || 0;
-//     };
-
-//     getQuantityById();
+  const shoppingCartCtx = useContext( ShoppingCartContext )
+  const { addProduct } = shoppingCartCtx
 
     return (
       <div className="row justify-content-center">
@@ -53,10 +35,12 @@ const Platos = ({items, addToCart}) =>{
                    $ {price}
                 </Card.Text>
 
-                <button type="button" className="boton">Ver Descripción</button>
-                {/* <button type="button" className="boton m-1" onClick={() => addToCart(id)}>+ Agregar al Carrito</button> */}
+                <Nav.Link as={Link} to={`/platos/${id}`}>
+                  <button  type="button" className="boton bg-dark">Visualizar</button>
+                </Nav.Link> 
+                <button type="button" className="boton m-1 bg-dark" onClick={() => addProduct(items)}>+ Agregar al Carrito</button>
 
-                <button onClick={() => Navigate} type="button" className="boton">Visualizar</button>
+                
 
               </Card.Body>
             </Card>
@@ -67,6 +51,8 @@ const Platos = ({items, addToCart}) =>{
     )
  }
 
+
+
 export default Platos
 
-//
+
