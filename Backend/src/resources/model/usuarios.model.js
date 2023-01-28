@@ -54,6 +54,10 @@ usuarioSchema.methods.validPassword = function (password) {
   return hash === this.password;
 }
 
+// usuarioSchema.methods.generateToken = function () {
+//   const token = jwt.sign({ id: this._id}, process.env.SECRET)
+//   return token
+// }
 
 // Se crea la instancia del modelo.
 export const usuarioModel = new mongoose.model( 'usuario', usuarioSchema )

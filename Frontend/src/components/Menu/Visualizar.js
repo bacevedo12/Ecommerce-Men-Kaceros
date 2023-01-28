@@ -1,6 +1,5 @@
 import { useParams } from 'react-router-dom'
 import {  useEffect, useState } from 'react'
-import { Button, Modal, Table } from 'react-bootstrap'
 import axios from 'axios'
 import { url_api } from '../api/Api';
 
@@ -9,20 +8,45 @@ import { url_api } from '../api/Api';
 
 const Visualizar =  () => {
 
-    const {id} = useParams();
-    const [product, setProduct] = useState([]);
-
-
+    const [product, setProduct] = useState({})
+    const {id}  = useParams()
+  
+    const obtenerProducto = async () => {
+      const respuesta = await axios.getfetch(`${url_api}/platos/${id}`)
+      setProduct(respuesta.data.product)
+    }
+  
     useEffect(() => {
-            const getProducts = async() => {
-                const response = await fetch(`${url_api}/platos/${id}`);
-                const data = await response.data
+      obtenerProducto()
+    }, [])
+   return (
+        <div>
+            <h1>producto{product.title}</h1>
+            <img src={product.img} alt={product.title}></img>
+
+        </div>
+    )
+   
     
-                setProduct(await response.json);
-            }
+  }
+  
+
+    // const {id} = useParams();
+    // const [product, setProduct] = useState([]);
+
+
+    // useEffect(() => {
+    //         const getProducts = async() => {
+    //             const response = await fetch(`${url_api}/platos/${id}`);
+    //             const data = await response.data
     
-            getProducts();
-        }, []);
+    //             setProduct(await response.json);
+    //         }
+    
+    //         getProducts();
+    //     }, []);
+
+        
 
     //  const [product, setProduct] = useState([])
 
@@ -41,18 +65,18 @@ const Visualizar =  () => {
     //     getProducts()
     // }, [])
      
-    return (
-        <div>
-            <h1>producto{product.title}</h1>
-            <img src={product.img} alt={product.title}></img>
+    // return (
+    //     <div>
+    //         <h1>producto{product.title}</h1>
+    //         <img src={product.img} alt={product.title}></img>
 
-        </div>
-    )
-
-
+    //     </div>
+    // )
 
 
-}
+
+
+
 //   const shoppingCartCtx = useContext( ShoppingCartContext )
 //   const { getProducts, products, removeProduct } = shoppingCartCtx
 

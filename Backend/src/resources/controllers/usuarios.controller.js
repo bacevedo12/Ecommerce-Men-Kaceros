@@ -6,7 +6,7 @@ import { getToken } from '../../../auth/jwt.js';
 
 export const createUsuario = async ( req, res ) => {
     const { username } = req.body;
-    const userExists = await User.findOne({ username });
+    const userExists = await usuarioModel.findOne({ username });
 
     if(userExists) {
         const error = new Error('Usuario ya registrado');
