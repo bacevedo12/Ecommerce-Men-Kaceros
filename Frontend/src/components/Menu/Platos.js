@@ -23,7 +23,7 @@ const Platos = ({items}) =>{
       <div className="row justify-content-center">
         {items.map((items, key)=>{       
 
-        const {id, title, img, price} = items
+        const {_id, title, img, price} = items
 
         return (        
             <Card key={key} className="col-xs-12 col-lg-3 m-3  colorcard" style={{ width: '18rem' }} >
@@ -35,7 +35,7 @@ const Platos = ({items}) =>{
                    $ {price}
                 </Card.Text>
 
-                <Nav.Link as={Link} to={`/platos/${id}`}>
+                <Nav.Link as={Link} to={`/platos/${_id}`}>
                   <button  type="button" className="boton bg-dark">Visualizar</button>
                 </Nav.Link> 
                 <button type="button" className="boton m-1 bg-dark" onClick={() => addProduct(items)}>+ Agregar al Carrito</button>
