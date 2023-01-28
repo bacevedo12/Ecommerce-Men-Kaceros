@@ -1,0 +1,16 @@
+.Titulo{
+    color:rgb(14, 14, 14);
+    text-align: center;
+   
+}
+
+.Imagen{
+width: 400px;
+}
+
+.Desc{
+    display: flex;
+    font-family: 'Montserrat,sans-serif';
+    align-items: center;
+    justify-content: center; 
+}
