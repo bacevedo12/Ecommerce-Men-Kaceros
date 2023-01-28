@@ -16,6 +16,7 @@ export const createUsuario = async ( req, res ) => {
     try {
       const user  = new usuarioModel(req.body);
       user.token = generateId();
+      user.hashPassword(req.body.password);
       await user.save() 
         res.json({
           success: true,
