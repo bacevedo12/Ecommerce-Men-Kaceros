@@ -1,5 +1,7 @@
 import { useParams } from 'react-router-dom'
 import {  useEffect, useState } from 'react'
+import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 //import axios from 'axios'
 import { url_api } from '../api/Api';
 //import Platos from './Platos';
@@ -9,6 +11,8 @@ import './Visualizacion.css';
 
 
 const Product = () => {
+ 
+
 
     const { id } = useParams();
     const [product, setProduct] = useState([])
@@ -49,10 +53,11 @@ const Product = () => {
      
     return (
         <div>
-            <h1 className='Titulo'>{product.title}</h1>
+            <h1 className=' mt-5 mb-4 Titulo'>{product.title}</h1>
             <img src={product.img} className='Imagen' alt={product.title}></img>
-            <h3 className='Desc'> {product.desc} </h3>
-        
+            <h3 className='Desc mt-5'> {product.desc} </h3>
+            <h3 className='mt-5'>Precio ${product.price} </h3>
+            <Button as={Link} to="/Menu" className="text-light bg-dark m-5 boton">Volver a menú</Button>
         </div>
     )
 

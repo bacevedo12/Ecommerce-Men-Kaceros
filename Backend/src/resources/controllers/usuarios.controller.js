@@ -45,6 +45,20 @@ export const createUsuario = async ( req, res ) => {
     
   }
 
+  export const getUsuarioById = async ( req, res ) => {
+    try{
+      const id = req.params.id
+      const usuario = await usuarioModel.findById( id )
+      return res.json({usuario});
+    }catch (e) {
+      return res.json ({
+        msg: "error",
+        details: e.message
+      });
+    }
+    
+  };
+
 
     
 export const signin = async (req, res) => {

@@ -1,8 +1,9 @@
 import Button from 'react-bootstrap/Button';
+import { Nav } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState } from "react";
 import "./iniciarsesion.css";
-import { useNavigate} from "react-router-dom";
+import { useNavigate, Link} from "react-router-dom";
 import UserContext from '../../context/user.context';
 
 
@@ -14,9 +15,10 @@ const state = useContext(UserContext)
 
   const [datos, setDatos] = useState({
     username:"",
-    password:""
+    password:"",
+    _id:""
   });
-
+console.log(datos)
 
   const handleInputChange = (e) =>{
     let { name, value } = e.target;
@@ -28,7 +30,7 @@ const state = useContext(UserContext)
     e.preventDefault();
     try {
       state.iniciarSesion(datos)
-      navigate('/Miperfil')
+      // navigate('/perfil')
     } catch (error) {
       console.log(error)
     }
@@ -49,9 +51,11 @@ const state = useContext(UserContext)
       <Form.Group className="mb-3" controlId="formBasicCheckbox">
         <Form.Check type="checkbox" label="Check me out" />
       </Form.Group>
-      <Button className='mb-4' variant="secondary" type="submit">
-        Submit
-      </Button>
+
+      
+      <Nav.Link as={Link} to={`/usuarios/${datos.username}`}>
+          <Button className='mb-4' variant="secondary" type="submit">Submit</Button>
+      </Nav.Link> 
     </Form>
     </section>
   );

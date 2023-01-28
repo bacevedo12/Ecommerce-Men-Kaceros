@@ -22,7 +22,7 @@ const Home = () => {
             <div className="reservaInicio col-m-6 col-s-12 align-items-center">
          <h1 className="parrafoReserva pt-5 mt-5">Registrate gratis</h1>
          <h3 className="parrafoReserva mt-3">Y recibe todas nuestras <br></br>promociones de menus!!!!</h3>
-         <Button as={Link} to="/Registro"className="botonRegistrate text-light mt-5" variant="info">Registrate Aquí</Button> 
+         <Button as={Link} to="/Registro"className="botonRegistrate text-light mt-5 mb-5" variant="info">Registrate Aquí</Button> 
       </div>
       
             </main>

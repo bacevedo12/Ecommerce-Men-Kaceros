@@ -24,7 +24,7 @@ function App() {
           <Route path='Menu' element= { <Menu /> }/>
           <Route path='Iniciarsesion' element= { <Iniciarsesion /> }/>
           <Route path='Registro' element= { <Registro /> }/>
-          <Route path='Miperfil' element= { <Miperfil /> }/>
+          <Route path='/usuarios/:id' element= { <Miperfil /> }/>
           <Route path='ShoppingCard' element= { <ShoppingCard /> }/>
           <Route path='/platos/:id' element= { <Visualizar /> }/>
           <Route path='*' element= { <Navigate replace to="/" /> }/>
